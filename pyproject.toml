@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "hello-super-package"
-version = "0.1.0"
+version = "0.1.1"
 description = "A tiny demo package that says hello."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -17,7 +17,7 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-    "pandas>=2.3"
+
 ]                  # add runtime deps here, e.g. ["requests>=2.32"]
 
 [project.urls]
