@@ -9,8 +9,8 @@ It includes a demo package (`hellodemo`) and a CLI (`hello-demo`).
 ## **1. Get Started — Clone This Repository**
 
 ```bash
-git clone https://github.com/<your-username>/hello-demo.git
-cd hello-super-package
+git clone https://github.com/slavahead/hello-demo.git <package-name>
+cd <package-name>
 ```
 
 ---
@@ -18,7 +18,7 @@ cd hello-super-package
 ## **2. Project Structure**
 
 ```
-hello-super-package/
+<package-name>/
 ├─ src/hellodemo/__init__.py
 ├─ src/hellodemo/core.py
 ├─ tests/test_core.py
@@ -36,7 +36,7 @@ Modify **`pyproject.toml`**:
 
 ```toml
 [project]
-name = "hello-super-package"       # Unique name on PyPI
+name = "<package-name>"       # Unique name on PyPI
 version = "0.1.0"                  # Start from 0.1.0, bump for each release
 description = "A tiny demo package that says hello."
 readme = "README.md"
@@ -51,8 +51,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/<your-username>/hello-super-package"
-Issues = "https://github.com/<your-username>/hello-super-package/issues"
+Homepage = "https://github.com/<your-username>/<package-name>"
+Issues = "https://github.com/<your-username>/<package-name>/issues"
 
 [project.scripts]
 hello-demo = "hellodemo.core:main"  # CLI entry point
@@ -89,7 +89,7 @@ exclude = ["venv/**", ".venv/**", "dist/**", "build/**", "*.egg-info/**", "__pyc
 cd ..
 python -m venv .packaging-venv
 source .packaging-venv/bin/activate   # Windows: .\.packaging-venv\Scripts\activate
-cd hello-super-package
+cd <package-name>
 ```
 
 ---
@@ -160,7 +160,7 @@ twine upload \
 pip install \
     -index-url https://test.pypi.org/simple/ \
     --extra-index-url https://pypi.org/simple \
-    hello-super-package==0.1.0
+    <package-name>==0.1.0
 ```
 
 ---
@@ -180,8 +180,23 @@ twine upload \
 ```
 4. Install from PyPI:
 ```bash
-pip install hello-super-package
+pip install <package-name>
+```
+
+5. Use the function
+
+- From the command line:
+```bash
 hello-demo --name Everyone
+```
+
+- In Pyhton:
+
+```python
+from hellodemo import say_hello
+
+
+print(say_hello('Everyone'))
 ```
 
 ---

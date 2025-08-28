@@ -3,7 +3,7 @@ requires = ["hatchling>=1.18"]
 build-backend = "hatchling.build"
 
 [project]
-name = "hello-super-package"
+name = "package-name"
 version = "0.1.1"
 description = "A tiny demo package that says hello."
 readme = "README.md"
